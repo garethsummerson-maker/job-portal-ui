@@ -154,8 +154,10 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-purple-700">Employer</div>
-                    <div className="text-gray-500">
+                    <div className={`font-medium ${theme === "dark" ? "text-purple-300" : "text-purple-700"}`}>
+                      Employer
+                    </div>
+                    <div className={theme === "dark" ? "text-gray-400" : "text-gray-500"}>
                       employer@company.com / employer123
                     </div>
                   </button>
@@ -168,8 +170,10 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-blue-700">Job Seeker</div>
-                    <div className="text-gray-500">
+                    <div className={`font-medium ${theme === "dark" ? "text-blue-300" : "text-blue-700"}`}>
+                      Job Seeker
+                    </div>
+                    <div className={theme === "dark" ? "text-gray-400" : "text-gray-500"}>
                       jobseeker@email.com / jobseeker123
                     </div>
                   </button>
@@ -182,8 +186,10 @@ const Login = () => {
                         : "bg-white border border-gray-200 hover:bg-gray-50"
                     } rounded-lg transition-colors text-sm`}
                   >
-                    <div className="font-medium text-blue-700">Admin</div>
-                    <div className="text-gray-500">
+                    <div className={`font-medium ${theme === "dark" ? "text-emerald-300" : "text-emerald-700"}`}>
+                      Admin
+                    </div>
+                    <div className={theme === "dark" ? "text-gray-400" : "text-gray-500"}>
                       admin@portal.com / admin123
                     </div>
                   </button>
@@ -196,6 +202,7 @@ const Login = () => {
             {/* Email Field */}
             <div>
               <label
+                htmlFor="email"
                 className={`block text-sm font-semibold ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
                 } mb-2`}
@@ -205,11 +212,13 @@ const Login = () => {
               <div className="relative">
                 <input
                   type="email"
+                  id="email"
                   name="email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 outline-none ${
+                  className={`w-full pl-4 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 outline-none ${
                     theme === "dark"
                       ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-900"
@@ -237,6 +246,7 @@ const Login = () => {
             {/* Password Field */}
             <div>
               <label
+                htmlFor="password"
                 className={`block text-sm font-semibold ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
                 } mb-2`}
@@ -246,11 +256,13 @@ const Login = () => {
               <div className="relative">
                 <input
                   type="password"
+                  id="password"
                   name="password"
+                  autoComplete="current-password"
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 outline-none ${
+                  className={`w-full pl-4 pr-10 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 outline-none ${
                     theme === "dark"
                       ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-900"
